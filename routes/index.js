@@ -727,7 +727,9 @@ router.get('/changeajustesfb', isAuthenticated
         console.log(req.session);
         let ajustesArray = []
         const ajustesCol = dbfb.collection('ajustes')
+        
         const ajustesData = await ajustesCol.get()
+        console.log(ajustesData);
         ajustesData.forEach(ajuste => {
             const ajusteData = ajuste.data()
             ajusteData.idusuariofs = ajuste.id
@@ -762,8 +764,9 @@ router.get('/changeajustesfb', isAuthenticated
             ajustesArray.push({niflocal,ciudad,nu,server3,server1,server2,id,solad,todo,local,direccion,estableciniento, idusuariofs,horacierre,horabc})
         }) */
         console.log(ajustesArray)
+        //res.send(ajustesArray[0])
 
-        res.render('ajustesp', { ajustes: ajustesArray[1] })
+        res.render('ajustesp', { ajustes: ajustesArray[0] })
         //res.send('jjjjj')
     })
 

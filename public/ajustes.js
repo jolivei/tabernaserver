@@ -370,7 +370,7 @@ async function testingS3(eve) {
         const resS = await fetch(`${server2.value}/getajustes`)
         const dataS = await resS.json()
         console.log(dataS);
-        if (dataS) {
+        if (dataS) { 
             alert('Conexion exitosa')
             saveS3.disabled = false
             spinner3.style.display = 'none'

@@ -196,7 +196,7 @@ router.post('/checkajustespass', async (req, res) => {
 
 
 
-router.get('/getajustes', isAuthenticated, async (req, res) => {
+router.get('/getajustes',isAuthenticated, async (req, res) => {
     let ajustesArray = []
     const ajustesCol = db.collection('ajustes')
     const ajustesData = await ajustesCol.get()
@@ -204,7 +204,7 @@ router.get('/getajustes', isAuthenticated, async (req, res) => {
         /*  let solad=el.data().solad
          let todo=el.data().todo */
 
-        let ciudad = el.data().ciudad
+        let ciudad = el.data().ciudad 
         let nu = el.data().nu
         let id = el.id
 
